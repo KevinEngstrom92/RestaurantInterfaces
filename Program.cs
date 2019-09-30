@@ -1,6 +1,7 @@
 ﻿using RestaurantInterfaces.Domain;
 using System;
 using System.Text;
+using System.Threading;
 
 namespace RestaurantInterfaces
 {
@@ -16,7 +17,7 @@ namespace RestaurantInterfaces
             Console.Clear();
             Console.WriteLine("Menu in De_restaurant:");
 
-            Console.WriteLine("1. Add Order.\n2. List Order(s)\n3. Exit\n");
+            Console.WriteLine("1. Add Order.\n2. List Pending Order(s)\n3. Process Order(s)\n\n\n4. Exit");
 
             ConsoleKeyInfo input = Console.ReadKey(true);
 
@@ -55,10 +56,14 @@ namespace RestaurantInterfaces
                         Console.ReadKey(true);
                         break;
                 case ConsoleKey.D3:
+                        var orderListan = restaurant.ProcessOrders();
+                        Console.WriteLine("All Orders Processed");
+                        Thread.Sleep(2000);
                       
+                        break;
+                    case ConsoleKey.D4:
                         shouldRun = false;
                         break;
-               
 
                 }
             }
