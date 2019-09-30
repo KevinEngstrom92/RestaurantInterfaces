@@ -1,11 +1,13 @@
-﻿using System;
+﻿using RestaurantInterfaces.Domain;
+using System;
 
 namespace RestaurantInterfaces
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            Restaurant restaurant = new Restaurant("Mc");
             bool shouldRun = true;
             while (shouldRun)
             { 
@@ -24,6 +26,13 @@ namespace RestaurantInterfaces
                        string dish = Console.ReadLine();
                         Console.WriteLine("Table: ");
                         string table = Console.ReadLine();
+
+                        Order order = new Order(dish, table);
+
+                        restaurant.RegisterOrder(order);
+
+                        Console.Clear();
+                        Console.WriteLine("Order Registered");
                         System.Threading.Thread.Sleep(2000);
 
                     break;
