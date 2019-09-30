@@ -10,11 +10,12 @@ namespace RestaurantInterfaces.Domain
         public List<Order> orderList = new List<Order>();
         public string Name { get; set; }
         public Queue<Order> OrderQueue { get; } = new Queue<Order>();
-        private ICook chef = new Jeff();
+        private ICook chef;
 
-        public Restaurant(string name)
+        public Restaurant(string name, ICook cook)
         {
             this.Name = name;
+            this.chef = cook;
         }
     
         internal void RegisterOrder(Order order)

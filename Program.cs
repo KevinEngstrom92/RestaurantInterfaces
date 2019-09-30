@@ -9,7 +9,7 @@ namespace RestaurantInterfaces
     {
         static void Main()
         {
-            Restaurant restaurant = new Restaurant("Mc");
+            Restaurant restaurant = new Restaurant("Mc", new Jeff());
             bool shouldRun = true;
             while (shouldRun)
             { 
@@ -57,6 +57,7 @@ namespace RestaurantInterfaces
                         break;
                 case ConsoleKey.D3:
                         var orderListan = restaurant.ProcessOrders();
+
                         Console.WriteLine("All Orders Processed");
                         Thread.Sleep(2000);
                       
