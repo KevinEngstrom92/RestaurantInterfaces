@@ -6,9 +6,14 @@ namespace RestaurantInterfaces
     {
         static void Main(string[] args)
         {
+            bool shouldRun = true;
+            while (shouldRun)
+            { 
+
+            Console.Clear();
             Console.WriteLine("Menu in De_restaurant:");
 
-            Console.WriteLine("1.\n2.\n3.\n4.\n");
+            Console.WriteLine("1. Add Order.\n2. List Order(s)\n3. Exit\n");
 
             ConsoleKeyInfo input = Console.ReadKey(true);
 
@@ -19,10 +24,12 @@ namespace RestaurantInterfaces
                 case ConsoleKey.D2:
                     break;
                 case ConsoleKey.D3:
-                    break;
-                case ConsoleKey.D4:
-                    break;
+                      
+                        shouldRun = false;
+                        break;
+               
 
+                }
             }
         }
     }
