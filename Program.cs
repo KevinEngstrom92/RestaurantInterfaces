@@ -20,6 +20,12 @@ namespace RestaurantInterfaces
             switch (input.Key)
             {
                 case ConsoleKey.D1:
+                        Console.WriteLine("Dish: ");
+                       string dish = Console.ReadLine();
+                        Console.WriteLine("Table: ");
+                        string table = Console.ReadLine();
+                        System.Threading.Thread.Sleep(2000);
+
                     break;
                 case ConsoleKey.D2:
                     break;
