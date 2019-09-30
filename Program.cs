@@ -9,7 +9,7 @@ namespace RestaurantInterfaces
     {
         static void Main()
         {
-            Restaurant restaurant = new Restaurant("Mc", new Jeff());
+            Restaurant restaurant = new Restaurant("Mc", new CookMaster5000());
             bool shouldRun = true;
             while (shouldRun)
             { 

@@ -12,7 +12,7 @@ namespace RestaurantInterfaces.Domain
         {
             Console.Clear();
             order.Started();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             order.Completed();
         }
     }
