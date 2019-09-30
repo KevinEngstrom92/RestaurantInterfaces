@@ -1,5 +1,6 @@
 ﻿using RestaurantInterfaces.Domain;
 using System;
+using System.Text;
 
 namespace RestaurantInterfaces
 {
@@ -35,9 +36,24 @@ namespace RestaurantInterfaces
                         Console.WriteLine("Order Registered");
                         System.Threading.Thread.Sleep(2000);
 
-                    break;
+                        break;
+
                 case ConsoleKey.D2:
-                    break;
+                case ConsoleKey.NumPad2:
+                        Console.Clear();
+                        Console.WriteLine("Table:\tDish:\t\t\tRegistered");
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append('-', Console.WindowWidth);
+                        Console.WriteLine(sb);
+
+                        foreach (var orderone in restaurant.OrderQueue)
+                        {
+                            Console.WriteLine($"{orderone.Table}\t{orderone.Dish}\t\t\t{orderone.RegisteredAt}");
+                        }
+
+                        Console.WriteLine("<Press Any Key To Continue>");
+                        Console.ReadKey(true);
+                        break;
                 case ConsoleKey.D3:
                       
                         shouldRun = false;

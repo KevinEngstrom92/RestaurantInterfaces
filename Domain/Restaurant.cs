@@ -7,14 +7,14 @@ namespace RestaurantInterfaces.Domain
     class Restaurant
     {
         public string Name { get; set; }
-        private Queue<Order> OrderQueue { get; } = new Queue<Order>();
+        public Queue<Order> OrderQueue { get; } = new Queue<Order>();
 
 
         public Restaurant(string name)
         {
             this.Name = name;
         }
-
+    
         internal void RegisterOrder(Order order)
         {
             OrderQueue.Enqueue(order);
